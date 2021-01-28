@@ -20,8 +20,8 @@
         <!-- main -->
         <main  id="lista">
           <div class="header-main">
-            <input type="text" name="" value="" placeholder="nuovo toDo">
-            <button  type="button" name="button">Aggiungi</button>
+            <input v-model='nuovoToDo' type="text" name="" value="" placeholder="nuovo toDo">
+            <button  @click='aggiungi' type="button" name="button">Aggiungi</button>
           </div>
           <div class="jumbo" >
             <div class="da-completare">
@@ -49,7 +49,8 @@
               <div class="lista">
                 <div v-if="toDoDone.length > 0"class="">
                     <ul>
-                      <li>
+                      <li v-for="(item, index) in toDoDone">
+                        {{item}}
                         <i class="fas fa-trash-alt"></i>
                       </li>
                     </ul>
