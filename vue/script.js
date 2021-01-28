@@ -13,15 +13,20 @@ var mui = new Vue ({
   methods: {
     cancella(index){
       this.toDoDone.push(this.toDo[index]);
-      // console.log(this.toDoz);
-      // this.toDo.splice(index,1);
-      console.log(this.toDo[index]);
-
+      this.toDo.splice(index,1);
     },
     aggiungi: function(){
       this.toDo.push(this.nuovoToDo);
-
+    },
+    cancellaTutto: function(){
+      this.toDoDone = [];
+    },
+    ripristina: function(index){
+      this.toDo.push(this.toDoDone[index]);
+      this.toDoDone.splice(index,1);
+    },
+    cancellaDefinitivo(index){
+      this.toDoDone.splice(index,1)
     }
   }
-
 });
