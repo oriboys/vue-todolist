@@ -11,9 +11,9 @@ var mui = new Vue ({
     toDoDone: []
   },
   methods: {
-    delete: function(){
-      this.toDo.push('ciao');
-      console.log(this.toDo);
+    cancella: function(index){
+      this.toDo.splice(index,1);
+
     }
   }
 

@@ -21,7 +21,7 @@
         <main  id="lista">
           <div class="header-main">
             <input type="text" name="" value="" placeholder="nuovo toDo">
-            <button @click='delete' type="button" name="button">Aggiungi</button>
+            <button  type="button" name="button">Aggiungi</button>
           </div>
           <div class="jumbo" >
             <div class="da-completare">
@@ -31,7 +31,7 @@
                   <div v-if="toDo.length > 0"class="">
                       <ul>
                         <li v-for="(item, index) in toDo"> {{item}}
-                          <i  class="fas fa-trash-alt" ></i>
+                          <i @click='cancella' class="fas fa-trash-alt" ></i>
                         </li>
                       </ul>
                   </div>
