@@ -27,11 +27,15 @@
             <div class="da-completare">
               <div class="">
                 <h2>Da completare</h2>
+                <h2 class="el">Elimina tutto <i @click='eliminaTutto' class="fas fa-trash-alt" ></i></h2>
                 <div class="lista">
                   <div v-if="toDo.length > 0"class="">
                       <ul>
                         <li v-for="(item, index) in toDo"> {{item}}
-                          <i @click='cancella(index)' class="fas fa-trash-alt" ></i>
+                          <div class="">
+                            <i @click='modifica(index)' class="fas fa-exchange-alt"></i>
+                            <i @click='cancella(index)' class="fas fa-trash-alt" ></i>
+                          </div>
                         </li>
                       </ul>
                   </div>
@@ -42,10 +46,11 @@
               </div>
             </div>
             <div class="elimina">
-              <button @click='cancellaTutto' type="button" name="button">Elimina tutto <i class="fas fa-trash-alt"></i></button>
+              <button @click='cancellaTutto' type="button" name="button">Elimina tutti i completati <i class="fas fa-trash-alt"></i></button>
             </div>
             <div class="completati">
               <h2>Completati</h2>
+              <h2 class="el">riprostina tutto <i @click="ripristinaTutto"class="fas fa-undo"></i></h2>
               <div class="lista">
                 <div v-if="toDoDone.length > 0"class="">
                     <ul>

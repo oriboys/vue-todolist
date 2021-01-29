@@ -20,6 +20,10 @@ header img{
   height: 200px;
 }
 
+i,
+button {
+  cursor: pointer;
+}
 /* main */
 .header-main{
   margin-top: 20px;
@@ -61,6 +65,8 @@ header img{
   width: 400px;
   height: 600px;
   background-color: lightgrey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px 10px black;
 }
 
 .jumbo button{
@@ -70,6 +76,14 @@ header img{
 .jumbo h2{
   padding-bottom: 30px;
   color: rgb(23, 175, 231);
+}
+
+.el{
+  font-size: 18px;
+}
+
+.el i{
+  padding-left: 18px;
 }
 
 .lista ul li{

@@ -17,6 +17,7 @@ var mui = new Vue ({
     },
     aggiungi: function(){
       this.toDo.push(this.nuovoToDo);
+      this.nuovoToDo= ''
     },
     cancellaTutto: function(){
       this.toDoDone = [];
@@ -27,6 +28,22 @@ var mui = new Vue ({
     },
     cancellaDefinitivo(index){
       this.toDoDone.splice(index,1)
+    },
+    eliminaTutto: function(){
+      for (var i = 0; i < this.toDo.length; i++){
+        this.toDoDone.push(this.toDo[i]);
+      }
+      this.toDo = [];
+    },
+    ripristinaTutto: function(){
+      for (var i = 0; i < this.toDoDone.length; i++){
+        this.toDo.push(this.toDoDone[i]);
+      }
+      this.toDoDone = [];
+    },
+    modifica(index){
+      this.toDo.splice(index,1, prompt('parola'));
+      console.log(this.toDo);
     }
   }
 });
